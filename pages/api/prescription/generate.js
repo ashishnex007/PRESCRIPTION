@@ -36,7 +36,7 @@ const generatePDF = async (req, res) => {
       }
     });
 
-    const qrCodeData = count+ JSON.stringify(data)+id;
+    const qrCodeData = "VALID " +count+ JSON.stringify(data)+id;
     const qrCodePath = './public/qr.png';
     await QRCode.toFile(qrCodePath, qrCodeData, {
       errorCorrectionLevel: 'H',
